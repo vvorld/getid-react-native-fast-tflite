@@ -1,5 +1,5 @@
 {
-  "name": "react-native-fast-tflite",
+  "name": "@get-id/react-native-fast-tflite",
   "version": "1.2.0",
   "description": "High-performance TensorFlow Lite library for React Native",
   "main": "lib/commonjs/index",
@@ -26,15 +26,11 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\" --fix",
     "lint-cpp": "scripts/clang-format.sh",
-    "prepare": "git submodule update --init --recursive",
-    "update-submodule": "git submodule update --remote --merge",
     "check-all": "scripts/check-all.sh",
     "prepack": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
-    "configure": "git submodule update --init --recursive && cd tensorflow && ./configure",
-    "bootstrap": "yarn && yarn example && yarn example pods && yarn configure",
-    "build-tflite-ios": "./scripts/build-tensorflow-ios.sh"
+    "bootstrap": "yarn && yarn example && yarn example pods"
   },
   "keywords": [
     "react-native",
@@ -51,13 +47,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/mrousavy/react-native-fast-tflite",
-  "author": "Marc Rousavy <me@mrousavy.com> (https://github.com/mrousavy)",
+  "repository": "https://github.com/vvorld/getid-react-native-fast-tflite",
+  "author": "Checkin.com <info@mcheckin.com> (https://checkin.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mrousavy/react-native-fast-tflite/issues"
+    "url": "https://github.com/vvorld/getid-react-native-fast-tflite/issues"
   },
-  "homepage": "https://github.com/mrousavy/react-native-fast-tflite#readme",
+  "homepage": "https://github.com/vvorld/getid-react-native-fast-tflite#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -103,7 +99,7 @@
       "tagName": "v${version}"
     },
     "npm": {
-      "publish": true
+      "publish": false
     },
     "github": {
       "release": true

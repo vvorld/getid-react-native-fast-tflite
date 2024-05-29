@@ -2,7 +2,7 @@
   "extends": "../tsconfig",
   "compilerOptions": {
     "paths": {
-      "react-native-fast-tflite": ["../src/index"]
+      "@get-id/react-native-fast-tflite": ["../src/index"]
     },
   },
   "include": [

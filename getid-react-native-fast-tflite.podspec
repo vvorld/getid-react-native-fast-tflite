@@ -10,7 +10,7 @@ end
 Pod::UI.puts "[TFLite] CoreML Delegate is set to #{enableCoreMLDelegate}! ($EnableCoreMLDelegate setting in Podfile)"
 
 Pod::Spec.new do |s|
-  s.name         = "react-native-fast-tflite"
+  s.name         = "getid-react-native-fast-tflite"
   s.version      = package["version"]
   s.summary      = package["description"]
   s.homepage     = package["homepage"]
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.authors      = package["author"]
 
   s.platforms    = { :ios => "11.0" }
-  s.source       = { :git => "https://github.com/mrousavy/react-native-fast-tflite.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/vvorld/getid-react-native-fast-tflite.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,mm}", "cpp/**/*.{hpp,cpp,c,h}"
 
@@ -27,10 +27,11 @@ Pod::Spec.new do |s|
     'CLANG_CXX_LANGUAGE_STANDARD' => 'c++17',
   }
 
-  s.ios.vendored_frameworks = [
-    'ios/TensorFlowLiteC.framework',
-    enableCoreMLDelegate ? 'ios/TensorFlowLiteCCoreML.framework' : ''
-  ]
+  s.dependency "TensorFlowLiteSwift", "~> 2.14.0"
+  if enableCoreMLDelegate then
+    s.dependency "TensorFlowLiteSwift/CoreML", "~> 2.14.0"
+  end
+
 
   # Use install_modules_dependencies helper to install the dependencies if React Native version >=0.71.0.
   # See https://github.com/facebook/react-native/blob/febf6b7f33fdb4904669f99d795eba4c0f95d7bf/scripts/cocoapods/new_architecture.rb#L79.

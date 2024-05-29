@@ -6,7 +6,7 @@ import {
   Tensor,
   TensorflowModel,
   useTensorflowModel,
-} from 'react-native-fast-tflite'
+} from '@get-id/react-native-fast-tflite'
 import {
   Camera,
   useCameraDevice,
